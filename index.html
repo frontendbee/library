@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="myBooks">
+        <h1>my Books</h1>
+        <div class="myBooks-home">
+            <div class="myBooks-home-reading">
+                <div><button>reading</button></div>
+            </div>
+            <div class="myBooks-home-toread">
+                <div><button>to read</button></div>
+            </div>
+            <div class="myBooks-home-read">
+                <div><button>read</button></div>
+            </div>
+
+            <button><img src="img/add-icon.svg" alt="" srcset=""></button>
+        </div>
+        <div class="myBooks-addABook">
+            <h2>add a book</h2>
+            <form action="">
+                <label for="title">title</label>
+                <input type="text" name="title" id="title">
+
+                <label for="author">author</label>
+                <input type="text" name="author" id="author">
+
+                <label for="pages">pages</label>
+                <input type="number" name="pages" id="pages">
+
+                <label for="notes">notes</label>
+                <input type="text" name="notes" id="notes">
+
+                <fieldset="" class="radioButtons">
+                    <label><input id="radio1" type="radio" name="option" value="reading">reading</label>
+                    <label><input id="radio2" type="radio" name="option" value="to read">to read</label>
+                    <label><input id="radio3" type="radio" name="option" value="read">read</label>
+                </fieldset>
+
+                <button id="addButton" type="submit">add</button>
+
+                <button><img src="img/cancel-icon.svg" alt="" srcset=""></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
