@@ -8,6 +8,8 @@ const radioButtons = document.querySelector('radioButtons');
 
 const addButton = document.querySelector('#addButton');
 
+
+
 let controlValue = 0;
 
 
@@ -60,3 +62,25 @@ addButton.addEventListener('click', function(event) {
    emptyAll()
    
  })
+
+//  open and close windows 
+const openButton = document.querySelector('#open-button');
+const cancelButton = document.querySelector('#cancel-button');
+
+const myBooksHome = document.querySelector('.myBooks-home');
+const myBooksAddABook = document.querySelector('.myBooks-addABook');
+
+function hideTheWindow(){
+  myBooksHome.classList.toggle('hidden');
+  openButton.classList.toggle('hidden');
+  myBooksAddABook.classList.toggle('hidden');
+  cancelButton.classList.toggle('hidden');
+}
+
+openButton.addEventListener('click', () =>{
+  hideTheWindow()
+})
+
+cancelButton.addEventListener('click', () =>{
+  hideTheWindow()
+})

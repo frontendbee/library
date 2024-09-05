@@ -9,23 +9,24 @@
 </head>
 <body>
     <div class="myBooks">
-        <h1>my Books</h1>
-        <div class="myBooks-home">
-            <div class="myBooks-home-reading">
-                <div><button>reading</button></div>
+        <div class="myBooks-title-div"><h1 class="myBooks-title">my Books</h1></div>
+        <div class="myBooks-home hidden">
+            <div class="myBooks-home-buttons myBooks-home-reading">
+                <button>reading</button>
             </div>
-            <div class="myBooks-home-toread">
-                <div><button>to read</button></div>
+            <div class="myBooks-home-buttons myBooks-home-toread">
+                <button>to read</button>
             </div>
-            <div class="myBooks-home-read">
-                <div><button>read</button></div>
+            <div class="myBooks-home-buttons myBooks-home-read">
+                <button>read</button>
             </div>
 
-            <button><img src="img/add-icon.svg" alt="" srcset=""></button>
+            <!-- <button class="myBooks-home-button-add"><img src="img/add-icon.svg" alt="" srcset=""></button> -->
         </div>
-        <div class="myBooks-addABook">
+        
+        <div class="myBooks-addABook ">
             <h2>add a book</h2>
-            <form action="">
+            <form class="myBooks-addABook-form" action="">
                 <label for="title">title</label>
                 <input type="text" name="title" id="title">
 
@@ -39,16 +40,18 @@
                 <input type="text" name="notes" id="notes">
 
                 <fieldset="" class="radioButtons">
-                    <label><input id="radio1" type="radio" name="option" value="reading">reading</label>
-                    <label><input id="radio2" type="radio" name="option" value="to read">to read</label>
+                    <label class="margin-label"><input id="radio1" type="radio" name="option" value="reading">reading</label>
+                    <label class="margin-label"><input id="radio2" type="radio" name="option" value="to read">to read</label>
                     <label><input id="radio3" type="radio" name="option" value="read">read</label>
                 </fieldset>
 
                 <button id="addButton" type="submit">add</button>
 
-                <button><img src="img/cancel-icon.svg" alt="" srcset=""></button>
+                <!-- <button><img src="img/cancel-icon.svg" alt="" srcset=""></button> -->
             </form>
         </div>
+        <button id="open-button" class="myBooks-buttons myBooks-button-add hidden"><img src="img/add-icon.svg" alt="" srcset=""></button>
+        <button id="cancel-button" class="myBooks-buttons myBooks-button-cancel "><img src="img/cancel-icon.svg" alt="" srcset=""></button>
     </div>
 </body>
 </html>

@@ -1,0 +1,186 @@
+/* reset css */
+/* @import "modern-normalize"; */
+
+:root {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+  margin: 0;
+}
+
+ol[role="list"], ul[role="list"] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+/* variables */
+:root{
+    --main-color: #fbfbfb;
+    --secondary-color: #f2f2f2;
+    /* --main-font: inter; */
+}
+
+/* css */
+body{
+    background-color: rgb(136, 136, 247);
+    /* height: 100vh; */
+    /* width: 100vw; */
+    margin: 0;
+    /* font-family:'Courier New', Courier, monospace; */
+    
+    /* height: 100%; */
+}
+
+.hidden{
+    /* visibility: hidden; */
+    display: none !important;
+}
+
+.myBooks{
+    background-color: rgb(169, 241, 169);
+    /* height: 100vh; */
+    max-width: 400px;
+    margin: auto;
+    height: 100vh;
+
+    position: relative;
+    
+}
+
+.myBooks-title-div{
+    background-color: rgb(211, 121, 211);
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    padding: 30px auto;
+    max-width: 400px;
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* position: fixed; */
+}
+
+.myBooks-title{
+    /* background-color: rgb(211, 121, 211); */
+    /* margin: auto; */
+    font-size: 1.5rem;
+    /* text-align: center; */
+    
+    /* position: relative; */
+}
+
+/* first page  */
+
+.myBooks-home{
+    background-color: rgb(122, 77, 41);
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 35px;
+
+    
+}
+
+.myBooks-home-buttons{
+    background-color: orange;
+}
+
+.myBooks-home-buttons > button{
+    font-size: 1.2rem;
+    border-radius: 10px;
+    width: 170px;
+    height: 35px;
+}
+
+.myBooks-buttons{
+    background-color: blue;
+    position: absolute;
+    /* left: 0px; */
+    right: 50px;
+    bottom: 50px;
+
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* second page  */
+
+.myBooks-addABook{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 100px;
+}
+
+.myBooks-addABook > h2{
+    font-size: 1.3rem;
+}
+
+.myBooks-addABook-form{
+    display: flex;
+    flex-direction: column;
+
+    /* gap: 5px; */
+}
+
+.myBooks-addABook-form > label{
+    background-color: aquamarine;
+    width: fit-content;
+    padding: 0px 5px;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    font-size: 1.2rem;
+}
+.myBooks-addABook-form > input{
+    height: 45px;
+    width: 280px;
+}
+.radioButtons{
+    margin-top: 20px;
+    background-color: purple;
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin: 50px auto;
+    font-size: 1.1rem;
+}
+
+.margin-label{
+    margin-right: 10px;
+}
+#addButton{
+    display: block;
+    /* margin-top: 20px; */
+    margin: 20px auto;
+
+    width: 120px;
+    /* height: 40px; */
+    font-size: 1.1rem;
+
+    /* font-size: 1.2rem; */
+    border-radius: 10px;
+    /* width: 170px; */
+    height: 35px;
+}
