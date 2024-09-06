@@ -10,21 +10,38 @@
 <body>
     <div class="myBooks">
         <div class="myBooks-title-div"><h1 class="myBooks-title">my Books</h1></div>
-        <div class="myBooks-home hidden">
+        <div class="myBooks-home ">
             <div class="myBooks-home-buttons myBooks-home-reading">
-                <button>reading</button>
+                <button class="myBooks-home-buttons-button">reading</button>
             </div>
+            <div class="reading">
+                <div class="myBooks-home-books myBooks-home-books-reading">
+                    <div class="myBooks-home-books-icondiv"><p>Dune</p><img src="img/delete-icon.svg" alt="" srcset=""></div>
+                    <div><p>by Frank Herbert</p></div>
+                    <div class="myBooks-home-books-icondiv"><p>288 pp</p><img src="img/modify-icon.svg" alt="" srcset=""></div>
+                </div>
+                <div class="myBooks-home-books myBooks-home-books-reading">
+                    <div class="myBooks-home-books-icondiv"><p>Dune</p><img src="img/delete-icon.svg" alt="" srcset=""></div>
+                    <div class="myBooks-home-books-noicondiv"><p>by Frank Herbert</p></div>
+                    <div class="myBooks-home-books-icondiv"><p>288 pp</p><img src="img/modify-icon.svg" alt="" srcset=""></div>
+                </div>
+            </div>
+            
+
             <div class="myBooks-home-buttons myBooks-home-toread">
-                <button>to read</button>
+                <button class="myBooks-home-buttons-button">to read</button>
             </div>
+            <div class="toread"></div>
+
             <div class="myBooks-home-buttons myBooks-home-read">
-                <button>read</button>
+                <button class="myBooks-home-buttons-button">read</button>
             </div>
+            <div class="read"></div>
 
             <!-- <button class="myBooks-home-button-add"><img src="img/add-icon.svg" alt="" srcset=""></button> -->
         </div>
         
-        <div class="myBooks-addABook ">
+        <div class="myBooks-addABook hidden">
             <h2>add a book</h2>
             <form class="myBooks-addABook-form" action="">
                 <label for="title">title</label>
@@ -50,8 +67,8 @@
                 <!-- <button><img src="img/cancel-icon.svg" alt="" srcset=""></button> -->
             </form>
         </div>
-        <button id="open-button" class="myBooks-buttons myBooks-button-add hidden"><img src="img/add-icon.svg" alt="" srcset=""></button>
-        <button id="cancel-button" class="myBooks-buttons myBooks-button-cancel "><img src="img/cancel-icon.svg" alt="" srcset=""></button>
+        <button id="open-button" class="myBooks-buttons myBooks-button-add "><img src="img/add-icon.svg" alt="" srcset=""></button>
+        <button id="cancel-button" class="myBooks-buttons myBooks-button-cancel hidden"><img src="img/cancel-icon.svg" alt="" srcset=""></button>
     </div>
 </body>
 </html>

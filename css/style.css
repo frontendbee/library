@@ -47,6 +47,11 @@ body{
     display: none !important;
 }
 
+.minimize{
+    height: 0;
+    visibility: hidden;
+}
+
 .myBooks{
     background-color: rgb(169, 241, 169);
     /* height: 100vh; */
@@ -92,13 +97,14 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    gap: 35px;
+    gap: 15px;
 
     
 }
 
 .myBooks-home-buttons{
     background-color: orange;
+    margin-bottom: 10px;
 }
 
 .myBooks-home-buttons > button{
@@ -121,6 +127,33 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* first page: books  */
+
+.myBooks-home-books{
+    height: 100px;
+    width: 300px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.myBooks-home-books-icondiv{
+    display: flex;
+    justify-content: space-between;
+}
+.myBooks-home-books-icondiv > p{
+    font-size: 1.1rem;
+}
+
+.reading, .toread, .read{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* second page  */

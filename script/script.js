@@ -3,7 +3,7 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const notes = document.querySelector('#notes');
-//const radioButton //here tak th radio button choice
+
 const radioButtons = document.querySelector('radioButtons');
 
 const addButton = document.querySelector('#addButton');
@@ -13,22 +13,27 @@ const addButton = document.querySelector('#addButton');
 let controlValue = 0;
 
 
-// behaviour
+
 const booksRead = [];
 const booksToRead = [];
 const booksReading = [];
 
+// book constructor
 function Book(title, author, pages, notes, nominalValue){
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.notes = notes;
-  //this.radioButton = radioButtons;
+
   this.nominalValue = controlValue + 1;
   controlValue++;
   addTheBook(this);
+
+  // 06/09
+  createDomElement(title, author, pages, notes, nominalValue);
 }
 
+// add book to the list
 function addTheBook(newbook){
   const checkedRadioButton = document.querySelector('input[name="option"]:checked');
   const checkedValue = checkedRadioButton ? checkedRadioButton.value : null;
@@ -43,7 +48,67 @@ function addTheBook(newbook){
   } else if (checkedValue === null){
     alert('Check an option below')
   }
+
+  createDomElement(newbook.title, newbook.author, newbook.pages, newbook.notes, newbook.nominalValue, checkedValue)
 }
+
+// create dom element 
+
+const readingDiv = document.querySelector('.reading');
+const toReadDiv = document.querySelector('.toread');
+const readDiv = document.querySelector('.read');
+
+function createDomElement(title, author, pages, notes, nominalValue, checkedValue){
+  const newBookDiv = document.createElement('div');
+  newBookDiv.classList.add('myBooks-home-books');
+  if(checkedValue === 'reading'){
+    readingDiv.appendChild(newBookDiv);
+    newBookDiv.classList.add('myBooks-home-books-reading');
+  } else if(checkedValue === 'to read'){
+    toReadDiv.appendChild(newBookDiv);
+    newBookDiv.classList.add('myBooks-home-books-toread');
+  } else if(checkedValue === 'read'){
+    readDiv.appendChild(newBookDiv);
+    newBookDiv.classList.add('myBooks-home-books-read');
+  } else {
+    return;
+  }
+
+  const myBooksHomeBooksIcondiv = document.createElement('div');
+  myBooksHomeBooksIcondiv.classList.add('myBooks-home-books-icondiv');
+  newBookDiv.appendChild(myBooksHomeBooksIcondiv);
+
+  const pTitle = document.createElement('p');
+  pTitle.textContent = title;
+  myBooksHomeBooksIcondiv.appendChild(pTitle);
+
+  const imgTitle = document.createElement('img');
+  imgTitle.src = 'img/delete-icon.svg';
+  myBooksHomeBooksIcondiv.appendChild(imgTitle);
+
+
+  const myBooksHomeBooksNoicondiv = document.createElement('div');
+  myBooksHomeBooksNoicondiv.classList.add('myBooks-home-books-noicondiv');
+  newBookDiv.appendChild(myBooksHomeBooksNoicondiv);
+
+  const pAuthor = document.createElement('p');
+  pAuthor.textContent = 'by ' + author;
+  myBooksHomeBooksNoicondiv.appendChild(pAuthor);
+  
+
+  const myBooksHomeBooksIcondiv2 = document.createElement('div');
+  myBooksHomeBooksIcondiv2.classList.add('myBooks-home-books-icondiv');
+  newBookDiv.appendChild(myBooksHomeBooksIcondiv2);
+
+  const pPages = document.createElement('p');
+  pPages.textContent = pages + ' pp';
+  myBooksHomeBooksIcondiv2.appendChild(pPages);
+
+  const imgPages = document.createElement('img');
+  imgPages.src = 'img/modify-icon.svg';
+  myBooksHomeBooksIcondiv2.appendChild(imgPages);
+}
+
 
 function emptyAll(){
   title.value = '';
@@ -83,4 +148,22 @@ openButton.addEventListener('click', () =>{
 
 cancelButton.addEventListener('click', () =>{
   hideTheWindow()
+})
+
+// minimize books div 
+const booksDiv = document.querySelectorAll('.myBooks-home-buttons-button');
+
+booksDiv.forEach(button => {
+  button.addEventListener('click', function(){
+    if(button.textContent === 'reading'){
+      // readingDiv.style.height = '0';
+      // readingDiv.style.visibility = 'hidden';
+      readingDiv.classList.toggle('minimize')
+    } else if(button.textContent === 'to read'){
+      toReadDiv.classList.toggle('minimize');
+    } else if(button.textContent === 'read'){
+      readDiv.classList.toggle('minimize');
+    }
+})
+
 })
