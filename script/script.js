@@ -61,6 +61,8 @@ const readDiv = document.querySelector('.read');
 function createDomElement(title, author, pages, notes, nominalValue, checkedValue){
   const newBookDiv = document.createElement('div');
   newBookDiv.classList.add('myBooks-home-books');
+  // newBookDiv.classList.add(nominalValue);
+
   if(checkedValue === 'reading'){
     readingDiv.appendChild(newBookDiv);
     newBookDiv.classList.add('myBooks-home-books-reading');
@@ -84,6 +86,14 @@ function createDomElement(title, author, pages, notes, nominalValue, checkedValu
 
   const imgTitle = document.createElement('img');
   imgTitle.src = 'img/delete-icon.svg';
+  imgTitle.classList.add('deleteIcon');
+  imgTitle.addEventListener('click', function(event) {
+    const clickedElement = event.target;
+    const parentElement = clickedElement.parentNode;
+    const grandParentElement = parentElement.parentNode;
+
+    grandParentElement.remove();
+  });
   myBooksHomeBooksIcondiv.appendChild(imgTitle);
 
 
@@ -167,3 +177,16 @@ booksDiv.forEach(button => {
 })
 
 })
+
+// delete this book button 
+const deleteIcons = document.querySelectorAll('.deleteIcon');
+
+deleteIcons.forEach(img => {
+  img.addEventListener('click', function(event) {
+    const clickedElement = event.target;
+    const parentElement = clickedElement.parentNode;
+    const grandParentElement = parentElement.parentNode;
+
+    grandParentElement.remove();
+  });
+});
