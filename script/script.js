@@ -1,8 +1,8 @@
 // elements
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-const pages = document.querySelector('#pages');
-const notes = document.querySelector('#notes');
+const bookTitle = document.querySelector('#title');
+const bookAuthor = document.querySelector('#author');
+const bookPages = document.querySelector('#pages');
+const bookNotes = document.querySelector('#notes');
 
 const radioButtons = document.querySelector('radioButtons');
 
@@ -48,7 +48,7 @@ function addTheBook(newbook){
   } else if (checkedValue === null){
     alert('Check an option below')
   }
-
+// console.log(newbook.title)
   createDomElement(newbook.title, newbook.author, newbook.pages, newbook.notes, newbook.nominalValue, checkedValue)
 }
 
@@ -116,6 +116,21 @@ function createDomElement(title, author, pages, notes, nominalValue, checkedValu
 
   const imgPages = document.createElement('img');
   imgPages.src = 'img/modify-icon.svg';
+  imgPages.classList.add('modifyIcon');
+  imgPages.addEventListener('click', function(event){
+    hideTheWindow();
+    bookTitle.value = title;
+    bookAuthor.value = author;
+    bookPages.value = pages;
+    bookNotes.value = notes;
+
+    const clickedElement = event.target;
+    const parentElement = clickedElement.parentNode;
+    const grandParentElement = parentElement.parentNode;
+
+    grandParentElement.remove();
+    addTheBook()
+  })
   myBooksHomeBooksIcondiv2.appendChild(imgPages);
 }
 
@@ -181,12 +196,20 @@ booksDiv.forEach(button => {
 // delete this book button 
 const deleteIcons = document.querySelectorAll('.deleteIcon');
 
-deleteIcons.forEach(img => {
-  img.addEventListener('click', function(event) {
-    const clickedElement = event.target;
-    const parentElement = clickedElement.parentNode;
-    const grandParentElement = parentElement.parentNode;
+// deleteIcons.forEach(img => {
+//   img.addEventListener('click', function(event) {
+//     const clickedElement = event.target;
+//     const parentElement = clickedElement.parentNode;
+//     const grandParentElement = parentElement.parentNode;
 
-    grandParentElement.remove();
-  });
-});
+//     grandParentElement.remove();
+//   });
+// });
+
+// modify this book button 
+// const modifyIcons = document.querySelectorAll('.modifyIcon');
+
+// function modifyTheBook(){
+//   hideTheWindow();
+//   title.value = 'ciao';
+// }
