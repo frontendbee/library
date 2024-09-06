@@ -29,7 +29,7 @@ function Book(title, author, pages, notes, nominalValue){
   controlValue++;
   addTheBook(this);
 
-  // 06/09
+  
   createDomElement(title, author, pages, notes, nominalValue);
 }
 
@@ -48,7 +48,7 @@ function addTheBook(newbook){
   } else if (checkedValue === null){
     alert('Check an option below')
   }
-// console.log(newbook.title)
+
   createDomElement(newbook.title, newbook.author, newbook.pages, newbook.notes, newbook.nominalValue, checkedValue)
 }
 
@@ -61,7 +61,7 @@ const readDiv = document.querySelector('.read');
 function createDomElement(title, author, pages, notes, nominalValue, checkedValue){
   const newBookDiv = document.createElement('div');
   newBookDiv.classList.add('myBooks-home-books');
-  // newBookDiv.classList.add(nominalValue);
+  
 
   if(checkedValue === 'reading'){
     readingDiv.appendChild(newBookDiv);
@@ -141,7 +141,7 @@ function emptyAll(){
   pages.value = '';
   notes.value = '';
 }
-// let book0 = new Book('il signore', 'paolo rossi', 345, 'bel libro!!!');
+
 
 addButton.addEventListener('click', function(event) {
   // e.preventDefault();
@@ -181,8 +181,7 @@ const booksDiv = document.querySelectorAll('.myBooks-home-buttons-button');
 booksDiv.forEach(button => {
   button.addEventListener('click', function(){
     if(button.textContent === 'reading'){
-      // readingDiv.style.height = '0';
-      // readingDiv.style.visibility = 'hidden';
+      
       readingDiv.classList.toggle('minimize')
     } else if(button.textContent === 'to read'){
       toReadDiv.classList.toggle('minimize');
@@ -195,21 +194,3 @@ booksDiv.forEach(button => {
 
 // delete this book button 
 const deleteIcons = document.querySelectorAll('.deleteIcon');
-
-// deleteIcons.forEach(img => {
-//   img.addEventListener('click', function(event) {
-//     const clickedElement = event.target;
-//     const parentElement = clickedElement.parentNode;
-//     const grandParentElement = parentElement.parentNode;
-
-//     grandParentElement.remove();
-//   });
-// });
-
-// modify this book button 
-// const modifyIcons = document.querySelectorAll('.modifyIcon');
-
-// function modifyTheBook(){
-//   hideTheWindow();
-//   title.value = 'ciao';
-// }

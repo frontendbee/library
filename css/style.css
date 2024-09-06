@@ -26,25 +26,22 @@ img {
 
 /* variables */
 :root{
-    --main-color: #fbfbfb;
-    --secondary-color: #f2f2f2;
-    /* --main-font: inter; */
+    --main-color: #D9D9D9;
+    --bg-color: #fafafa;
+    --body-color: #e7e7e7;
 }
 
 /* css */
 body{
-    background-color: rgb(136, 136, 247);
-    /* height: 100vh; */
-    /* width: 100vw; */
-    margin: 0;
-    /* font-family:'Courier New', Courier, monospace; */
+    background-color: var(--body-color);
     
-    /* height: 100%; */
+    margin: 0;
+    
 }
 
 
 .hidden{
-    /* visibility: hidden; */
+    
     display: none !important;
 }
 
@@ -54,8 +51,8 @@ body{
 }
 
 .myBooks{
-    background-color: rgb(169, 241, 169);
-    /* height: 100vh; */
+    background-color: var(--bg-color);
+    
     max-width: 400px;
     margin: auto;
     height: 100vh;
@@ -65,33 +62,30 @@ body{
 }
 
 .myBooks-title-div{
-    background-color: rgb(211, 121, 211);
+    background-color: var(--bg-color);
     height: 50px;
     width: 100%;
     margin: auto;
     padding: 30px auto;
     max-width: 400px;
-    /* margin: auto; */
+   
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* position: fixed; */
+    
 }
 
 .myBooks-title{
-    /* background-color: rgb(211, 121, 211); */
-    /* margin: auto; */
-    font-size: 1.5rem;
-    /* text-align: center; */
     
-    /* position: relative; */
+    font-size: 1.5rem;
+    
 }
 
 /* first page  */
 
 .myBooks-home{
-    background-color: rgb(122, 77, 41);
+    background-color: var(--bg-color);
     margin-top: 40px;
 
     display: flex;
@@ -104,7 +98,7 @@ body{
 }
 
 .myBooks-home-buttons{
-    background-color: orange;
+    background-color: var(--bg-color);
     margin-bottom: 10px;
 }
 
@@ -113,18 +107,22 @@ body{
     border-radius: 10px;
     width: 170px;
     height: 35px;
+
+    border: none;
 }
 
 .myBooks-buttons{
-    background-color: blue;
+    background-color: var(--bg-color);
     position: absolute;
-    /* left: 0px; */
+   
     right: 50px;
     bottom: 50px;
 
     height: 50px;
     width: 50px;
     border-radius: 100%;
+    border: none;
+    background-color: var(--main-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,11 +174,11 @@ body{
     display: flex;
     flex-direction: column;
 
-    /* gap: 5px; */
+    
 }
 
 .myBooks-addABook-form > label{
-    background-color: aquamarine;
+    background-color: var(--bg-color);
     width: fit-content;
     padding: 0px 5px;
     position: relative;
@@ -191,12 +189,13 @@ body{
 .myBooks-addABook-form > input{
     height: 45px;
     width: 280px;
+    background-color: var(--bg-color);
+    border: 1px solid black;
 }
 .radioButtons{
     margin-top: 20px;
-    background-color: purple;
-    /* display: flex; */
-    /* flex-direction: column; */
+    background-color: var(--bg-color);
+    
     margin: 50px auto;
     font-size: 1.1rem;
 }
@@ -206,15 +205,15 @@ body{
 }
 #addButton{
     display: block;
-    /* margin-top: 20px; */
+    
     margin: 20px auto;
 
     width: 120px;
-    /* height: 40px; */
+    
     font-size: 1.1rem;
-
-    /* font-size: 1.2rem; */
+    border: none;
+    
     border-radius: 10px;
-    /* width: 170px; */
+  
     height: 35px;
 }
