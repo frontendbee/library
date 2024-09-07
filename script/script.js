@@ -46,7 +46,7 @@ function addTheBook(newbook){
   } else if (checkedValue === 'to read'){
     booksToRead.push(newbook);
   } else if (checkedValue === null){
-    alert('Check an option below')
+    alert('Check an option below');
   }
 
   createDomElement(newbook.title, newbook.author, newbook.pages, newbook.notes, newbook.nominalValue, checkedValue)
@@ -149,6 +149,8 @@ addButton.addEventListener('click', function(event) {
   
    const exampleOne = new Book(title.value, author.value, pages.value, notes.value);
    
+
+   hideTheWindow();
    emptyAll()
    
  })
