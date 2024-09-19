@@ -19,19 +19,33 @@ const booksToRead = [];
 const booksReading = [];
 
 // book constructor
-function Book(title, author, pages, notes, nominalValue){
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.notes = notes;
+// function Book(title, author, pages, notes, nominalValue){
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.notes = notes;
 
-  this.nominalValue = controlValue + 1;
-  controlValue++;
-  addTheBook(this);
+//   this.nominalValue = controlValue + 1;
+//   controlValue++;
+//   addTheBook(this);
 
   
-  createDomElement(title, author, pages, notes, nominalValue);
+//   createDomElement(title, author, pages, notes, nominalValue);
+// }
+// CLASS
+class Book {
+  constructor(title, author, pages, notes, nominalValue) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.notes = notes;
+
+    this.nominalValue = controlValue + 1;
+    controlValue++;
+    addTheBook(this);
+  }
 }
+// CLASS
 
 // add book to the list
 function addTheBook(newbook){
