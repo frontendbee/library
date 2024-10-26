@@ -2,7 +2,6 @@
 const bookTitle = document.querySelector('#title');
 const bookAuthor = document.querySelector('#author');
 const bookPages = document.querySelector('#pages');
-const bookNotes = document.querySelector('#notes');
 
 const radioButtons = document.querySelector('radioButtons');
 
@@ -18,41 +17,43 @@ const booksRead = [];
 const booksToRead = [];
 const booksReading = [];
 
-// book constructor
-// function Book(title, author, pages, notes, nominalValue){
-//   this.title = title;
-//   this.author = author;
-//   this.pages = pages;
-//   this.notes = notes;
 
-//   this.nominalValue = controlValue + 1;
-//   controlValue++;
-//   addTheBook(this);
-
-  
-//   createDomElement(title, author, pages, notes, nominalValue);
-// }
 // CLASS
 class Book {
-  constructor(title, author, pages, notes, nominalValue) {
+  constructor(title, author, pages, nominalValue) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.notes = notes;
 
     this.nominalValue = controlValue + 1;
     controlValue++;
     addTheBook(this);
   }
 }
-// CLASS
 
+// CLASS
+const emailInput = document.getElementById('email')
 // add book to the list
 function addTheBook(newbook){
+  emailInput.reportValidity();
+
+  if(emailInput.validity.valid){
+    
+     
+  } else if (emailInput.validity.valueMissing){
+    emailInput.classList.toggle('invalid')
+    alert('write your email address')
+    return;
+  } else if (emailInput.validity.invalid){
+    console.log('insert a value')
+    emailInput.classList.toggle('invalid')
+  }
+
+
   const checkedRadioButton = document.querySelector('input[name="option"]:checked');
   const checkedValue = checkedRadioButton ? checkedRadioButton.value : null;
 
-  // console.log(checkedValue)
+  
   if (checkedValue === 'read'){
     booksRead.push(newbook);
   } else if (checkedValue === 'reading'){
@@ -62,8 +63,23 @@ function addTheBook(newbook){
   } else if (checkedValue === null){
     alert('Check an option below');
   }
+  
 
-  createDomElement(newbook.title, newbook.author, newbook.pages, newbook.notes, newbook.nominalValue, checkedValue)
+  createDomElement(newbook.title, newbook.author, newbook.pages, newbook.nominalValue, checkedValue)
+
+  // addButton.removeEventListener('click', function(event) {
+  //   // e.preventDefault();
+  //   event.preventDefault();
+    
+  //    const exampleOne = new Book(title.value, author.value, pages.value);
+     
+  
+  //    hideTheWindow();
+  //    emptyAll()
+     
+  //  })
+  emailInput.value = '';
+  emailInput.classList.toggle('invalid')
 }
 
 // create dom element 
@@ -72,7 +88,7 @@ const readingDiv = document.querySelector('.reading');
 const toReadDiv = document.querySelector('.toread');
 const readDiv = document.querySelector('.read');
 
-function createDomElement(title, author, pages, notes, nominalValue, checkedValue){
+function createDomElement(title, author, pages, nominalValue, checkedValue){
   const newBookDiv = document.createElement('div');
   newBookDiv.classList.add('myBooks-home-books');
   
@@ -136,7 +152,7 @@ function createDomElement(title, author, pages, notes, nominalValue, checkedValu
     bookTitle.value = title;
     bookAuthor.value = author;
     bookPages.value = pages;
-    bookNotes.value = notes;
+    // bookNotes.value = notes;
 
     const clickedElement = event.target;
     const parentElement = clickedElement.parentNode;
@@ -153,19 +169,23 @@ function emptyAll(){
   title.value = '';
   author.value = '';
   pages.value = '';
-  notes.value = '';
+  // notes.value = '';
 }
 
 
 addButton.addEventListener('click', function(event) {
   // e.preventDefault();
   event.preventDefault();
-  
-   const exampleOne = new Book(title.value, author.value, pages.value, notes.value);
-   
 
+  if(emailInput.validity.valid){
+    const exampleOne = new Book(title.value, author.value, pages.value);
+    emailInput.classList.remove('invalid')
    hideTheWindow();
    emptyAll()
+  } else {
+    emailInput.classList.add('invalid')
+  }
+   
    
  })
 
